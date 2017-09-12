@@ -1,0 +1,65 @@
+<header class="jumbotron">
+<div class="container">
+<h1 class="jumbotron-h1">Baseball Resarch</h1>
+<p><img class="img-responsive center" src="baseball-mound-5825879.jpg" alt="Baseball Resarch"></p>
+</div> <!-- /container -->
+</header>
+
+<div class=container>
+<div class="panel panel-primary">
+<div class="panel-heading">Dashbord</div>
+<!-- table -->
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tr>
+      <th>選手名</th>
+      <th>チーム</th>
+      <th>G</th>
+      <th>PA</th>
+      <th>HR</th>
+      <th>R</th>
+      <th>RBI</th>
+      <th>SB</th>
+      <th>BB%</th>
+      <th>K%</th>
+      <th>ISO</th>
+      <th>BABIP</th>
+      <th>AVG</th>
+      <th>OBP</th>
+      <th>SLG</th>
+      <th>wOBA</th>
+      <th>WRC+</th>
+      <th>BsR</th>
+      <th>Offence</th>
+      <th>Deffence</th>
+      <th>WAR</th>
+    </tr>
+    <% @dashboards.each do |dashboard| %>
+    <tr>
+      <td><%= dashboard.player %></td>
+      <td><%= dashboard.team %></td>
+      <td><%= dashboard.game %></td>
+      <td><%= dashboard.plate_appearance %></td>
+      <td><%= dashboard.homerun %></td>
+      <td><%= dashboard.run %></td>
+      <td><%= dashboard.runs_batted_in %></td>
+      <td><%= dashboard.stolen_base %></td>
+      <td><%= dashboard.bb_persent %></td>
+      <td><%= dashboard.k_persent %></td>
+      <td><%= dashboard.iso %></td>
+      <td><%= dashboard.babip %></td>
+      <td><%= dashboard.average %></td>
+      <td><%= dashboard.obp %></td>
+      <td><%= dashboard.slg %></td>
+      <td><%= dashboard.woba %></td>
+      <td><%= dashboard.wrc_plus %></td>
+      <td><%= dashboard.bsr %></td>
+      <td><%= dashboard.offence %></td>
+      <td><%= dashboard.deffence %></td>
+      <td><%= dashboard.war %></td>
+    </tr>
+    <% end %>
+  </table>
+  </div><!-- table-responsive -->
+  </div>
+  </div>

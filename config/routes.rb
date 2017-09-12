@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :dashboards, only: :index
+  resources :dashboards
+  root 'dashboards#index'
 end
