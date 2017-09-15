@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="header">
+    <h1 class="grid-6"><a href="/">BaseballResarch</a></h1>
+      <div class="user_nav grid-6">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
+  </div>
+</header>
 
 <%= yield %>
 
+<footer>
+  <span>
+    Copyright BaseballResarch 2017.
+  </span>
+</footer>
 </body>
 </html>
+

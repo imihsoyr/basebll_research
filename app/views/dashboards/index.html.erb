@@ -1,65 +1,79 @@
-<header class="jumbotron">
-<div class="container">
-<h1 class="jumbotron-h1">Baseball Resarch</h1>
-<p><img class="img-responsive center" src="baseball-mound-5825879.jpg" alt="Baseball Resarch"></p>
-</div> <!-- /container -->
-</header>
 
-<div class=container>
-<div class="panel panel-primary">
-<div class="panel-heading">Dashbord</div>
-<!-- table -->
-<div class="table-responsive">
-  <table class="table table-hover">
-    <tr>
-      <th>選手名</th>
-      <th>チーム</th>
-      <th>G</th>
-      <th>PA</th>
-      <th>HR</th>
-      <th>R</th>
-      <th>RBI</th>
-      <th>SB</th>
-      <th>BB%</th>
-      <th>K%</th>
-      <th>ISO</th>
-      <th>BABIP</th>
-      <th>AVG</th>
-      <th>OBP</th>
-      <th>SLG</th>
-      <th>wOBA</th>
-      <th>WRC+</th>
-      <th>BsR</th>
-      <th>Offence</th>
-      <th>Deffence</th>
-      <th>WAR</th>
-    </tr>
-    <% @dashboards.each do |dashboard| %>
-    <tr>
-      <td><%= dashboard.player %></td>
-      <td><%= dashboard.team %></td>
-      <td><%= dashboard.game %></td>
-      <td><%= dashboard.plate_appearance %></td>
-      <td><%= dashboard.homerun %></td>
-      <td><%= dashboard.run %></td>
-      <td><%= dashboard.runs_batted_in %></td>
-      <td><%= dashboard.stolen_base %></td>
-      <td><%= dashboard.bb_persent %></td>
-      <td><%= dashboard.k_persent %></td>
-      <td><%= dashboard.iso %></td>
-      <td><%= dashboard.babip %></td>
-      <td><%= dashboard.average %></td>
-      <td><%= dashboard.obp %></td>
-      <td><%= dashboard.slg %></td>
-      <td><%= dashboard.woba %></td>
-      <td><%= dashboard.wrc_plus %></td>
-      <td><%= dashboard.bsr %></td>
-      <td><%= dashboard.offence %></td>
-      <td><%= dashboard.deffence %></td>
-      <td><%= dashboard.war %></td>
-    </tr>
-    <% end %>
-  </table>
-  </div><!-- table-responsive -->
-  </div>
-  </div>
+          <div class=container>
+          <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    チーム
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <li class="dropdown-header">パシフィック</li>
+    <li><a href="#">福岡ソフトバンク</a></li>
+    <li class="dropdown-header">セントラル</li>
+    <li><a href="#">広島東洋カープ</a></li>
+  </ul>
+</div>
+<!--             <div class="panel panel-primary">
+              <div class="panel-heading">Dashbord</div> -->
+              <!-- table -->
+              <div class="table-responsive">
+                <table class="table table-hover" >
+                  <thead>
+                    <tr class="active">
+                    <th>#</th>
+                      <th>選手名</th>
+                      <th>チーム</th>
+                      <th>G</th>
+                      <th>PA</th>
+                      <th>HR</th>
+                      <th>R</th>
+                      <th>RBI</th>
+                      <th>SB</th>
+                      <th>BB%</th>
+                      <th>K%</th>
+                      <th>ISO</th>
+                      <th>BABIP</th>
+                      <th>AVG</th>
+                      <th>OBP</th>
+                      <th>SLG</th>
+                      <th>wOBA</th>
+                      <th>WRC+</th>
+                      <th>BsR</th>
+                      <th>Offence</th>
+                      <th>Deffence</th>
+                      <th>WAR</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @dashboards.each.with_index(1) do |dashboard, i| %>
+                    <tr>
+                    <td>
+                    <%= i %>
+                    </td>
+                      <td><a href="/players/<%= dashboard.player_id %>"><%= dashboard.player %></td>
+                      <td><%= dashboard.team %></td>
+                      <td><%= dashboard.game %></td>
+                      <td><%= dashboard.plate_appearance %></td>
+                      <td><%= dashboard.homerun %></td>
+                      <td><%= dashboard.run %></td>
+                      <td><%= dashboard.runs_batted_in %></td>
+                      <td><%= dashboard.stolen_base %></td>
+                      <td><%= number_to_percentage(dashboard.bb_persent, precision: 1 ) %></td>
+                      <td><%= number_to_percentage(dashboard.k_persent, precision: 1 ) %></td>
+                      <td><%= number_with_precision(dashboard.iso, precision: 3 ) %></td>
+                      <td><%= number_with_precision(dashboard.babip, precision: 3 ) %></td>
+                      <td><%= number_with_precision(dashboard.average, precision: 3 ) %></td>
+                      <td><%= number_with_precision(dashboard.obp, precision: 3 ) %></td>
+                      <td><%= number_with_precision(dashboard.slg, precision: 3 ) %></td>
+                      <td><%= number_with_precision(dashboard.woba, precision: 3 ) %></td>
+                      <td><%= dashboard.wrc_plus %></td>
+                      <td><%= dashboard.bsr %></td>
+                      <td><%= dashboard.offence %></td>
+                      <td><%= dashboard.deffence %></td>
+                      <td><%= dashboard.war %></td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div><!-- table-responsive -->
+     <!--        </div>
+          </div> -->
