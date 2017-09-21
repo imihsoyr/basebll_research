@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170915060056) do
+ActiveRecord::Schema.define(version: 20170921040121) do
 
   create_table "dashboards", force: :cascade do |t|
-    t.string   "player",           limit: 255
     t.string   "team",             limit: 255
     t.integer  "game",             limit: 4
     t.integer  "plate_appearance", limit: 4
