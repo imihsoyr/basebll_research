@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921040121) do
+ActiveRecord::Schema.define(version: 20171004064806) do
+
+  create_table "battings", force: :cascade do |t|
+    t.integer  "year",                  limit: 4
+    t.string   "team_name",             limit: 255
+    t.string   "bat_name",              limit: 255
+    t.integer  "age",                   limit: 4
+    t.integer  "games",                 limit: 4
+    t.integer  "plate_appe",            limit: 4
+    t.integer  "at_bats",               limit: 4
+    t.integer  "runs",                  limit: 4
+    t.integer  "hits",                  limit: 4
+    t.integer  "doubles",               limit: 4
+    t.integer  "triples",               limit: 4
+    t.integer  "homeruns",              limit: 4
+    t.integer  "runs_batted_in",        limit: 4
+    t.integer  "stolen_bases",          limit: 4
+    t.integer  "caught_steal",          limit: 4
+    t.integer  "walks",                 limit: 4
+    t.integer  "strikeouts",            limit: 4
+    t.float    "batting_avg",           limit: 24
+    t.float    "onbase_perc",           limit: 24
+    t.float    "slugging_perc",         limit: 24
+    t.float    "onbase_plus_slugging",  limit: 24
+    t.integer  "total_bases",           limit: 4
+    t.integer  "grounded_double_plays", limit: 4
+    t.integer  "hit_by_pitch",          limit: 4
+    t.integer  "sacrifice_hits",        limit: 4
+    t.integer  "sacrifice_flies",       limit: 4
+    t.integer  "intentional_bb",        limit: 4
+    t.string   "notes",                 limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "player_id",             limit: 255
+  end
 
   create_table "dashboards", force: :cascade do |t|
     t.string   "team",             limit: 255
@@ -39,6 +73,45 @@ ActiveRecord::Schema.define(version: 20170921040121) do
     t.integer  "player_id",        limit: 4
   end
 
+  create_table "pitchings", force: :cascade do |t|
+    t.integer  "year",                 limit: 4
+    t.string   "team_name",            limit: 255
+    t.string   "pit_name",             limit: 255
+    t.integer  "age",                  limit: 4
+    t.integer  "wins",                 limit: 4
+    t.integer  "losses",               limit: 4
+    t.float    "win_loss_perc",        limit: 24
+    t.float    "earned_run_avg",       limit: 24
+    t.integer  "games",                limit: 4
+    t.integer  "games_started",        limit: 4
+    t.integer  "games_finished",       limit: 4
+    t.integer  "complete_game",        limit: 4
+    t.integer  "shutouts",             limit: 4
+    t.integer  "saves",                limit: 4
+    t.float    "innings_pitched",      limit: 24
+    t.integer  "hits",                 limit: 4
+    t.integer  "runs",                 limit: 4
+    t.integer  "earned_runs",          limit: 4
+    t.integer  "homeruns",             limit: 4
+    t.integer  "walks",                limit: 4
+    t.integer  "intentional_bb",       limit: 4
+    t.integer  "strikeouts",           limit: 4
+    t.integer  "hit_by_pitch",         limit: 4
+    t.integer  "balks",                limit: 4
+    t.integer  "wild_pitches",         limit: 4
+    t.integer  "batters_faced",        limit: 4
+    t.float    "whip",                 limit: 24
+    t.float    "hits_per_nine",        limit: 24
+    t.float    "homeruns_per_nine",    limit: 24
+    t.float    "walks_per_nine",       limit: 24
+    t.float    "strikeouts_per_nine",  limit: 24
+    t.float    "strikeouts_per_walks", limit: 24
+    t.string   "notes",                limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "player_id",            limit: 255
+  end
+
   create_table "players", force: :cascade do |t|
     t.string   "player_name",   limit: 255
     t.string   "backnumber",    limit: 255
@@ -53,6 +126,7 @@ ActiveRecord::Schema.define(version: 20170921040121) do
     t.integer  "year",          limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "player_id",     limit: 255
   end
 
   create_table "users", force: :cascade do |t|

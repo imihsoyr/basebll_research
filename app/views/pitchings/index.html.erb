@@ -1,0 +1,99 @@
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li><a href="/battings">Batting</a></li>
+          <li class="active"><a href="/pitchings">Pitching</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<div class="container" >
+
+
+<h1>2016 Pitching</h1>
+
+<hr noshade>
+<!-- table -->
+<div class="table-responsive">
+  <table class="table table-condensed table-hover" >
+    <thead class="text-center">
+      <tr class="active">
+        <th>#</th>
+        <th>Player</th>
+        <th>Team</th>
+        <th>Age</th>
+        <th>W</th>
+        <th>L</th>
+        <th>W-L%</th>
+        <th>ERA</th>
+        <th>G</th>
+        <th>GS</th>
+        <th>GF</th>
+        <th>CG</th>
+        <th>SHO</th>
+        <th>SV</th>
+        <th>IP</th>
+        <th>H</th>
+        <th>R</th>
+        <th>ER</th>
+        <th>HR</th>
+        <th>BB</th>
+        <th>IBB</th>
+        <th>SO</th>
+        <th>HBP</th>
+        <th>BK</th>
+        <th>WP</th>
+        <th>BF</th>
+        <th>WHIP</th>
+        <th>H/9</th>
+        <th>HR/9</th>
+        <th>BB/9</th>
+        <th>SO/9</th>
+        <th>SO/BB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pitchings.each.with_index(1) do |pitching, i| %>
+      <tr>
+        <td>
+          <%= i %>
+        </td>
+        <td class="text-left"><%= link_to pitching.pit_name, "/player/#{pitching.player_id}" %></a></td>
+        <td class="text-left"><%= pitching.team_name %></td>
+        <td class="text-right"><%= pitching.age %></td>
+        <td class="text-right"><%= pitching.wins %></td>
+        <td class="text-right"><%= pitching.losses %></td>
+        <td class="text-right"><%= number_with_precision( pitching.win_loss_perc, percision: 3) %></td>
+        <td class="text-right"><%= number_with_precision( pitching.earned_run_avg, precision: 2) %></td>
+        <td class="text-right"><%= pitching.games %></td>
+        <td class="text-right"><%= pitching.games_started %></td>
+        <td class="text-right"><%= pitching.games_finished %></td>
+        <td class="text-right"><%= pitching.complete_game %></td>
+        <td class="text-right"><%= pitching.shutouts %></td>
+        <td class="text-right"><%= pitching.saves %></td>
+        <td class="text-right"><%= pitching.innings_pitched %></td>
+        <td class="text-right"><%= pitching.hits %></td>
+        <td class="text-right"><%= pitching.runs %></td>
+        <td class="text-right"><%= pitching.earned_runs %></td>
+        <td class="text-right"><%= pitching.homeruns %></td>
+        <td class="text-right"><%= pitching.walks %></td>
+        <td class="text-right"><%= pitching.intentional_bb %></td>
+        <td class="text-right"><%= pitching.strikeouts %></td>
+        <td class="text-right"><%= pitching.hit_by_pitch %></td>
+        <td class="text-right"><%= pitching.balks %></td>
+        <td class="text-right"><%= pitching.wild_pitches %></td>
+        <td class="text-right"><%= pitching.batters_faced %></td>
+        <td class="text-right"><%= number_with_precision( pitching.whip, precision: 3) %></td>
+        <td class="text-right"><%= number_with_precision( pitching.hits_per_nine, precision: 1) %></td>
+        <td class="text-right"><%= number_with_precision( pitching.homeruns_per_nine, precision: 1) %></td>
+        <td class="text-right"><%= number_with_precision( pitching.walks_per_nine, precision: 1) %></td>
+        <td class="text-right"><%= number_with_precision( pitching.strikeouts_per_nine, precision:1) %></td>
+        <td class="text-right"><%= number_with_precision( pitching.strikeouts_per_walks, precision: 2) %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div><!-- table-responsive -->
+        </div>
+      </div>
+    </div><!-- row -->

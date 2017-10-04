@@ -1,0 +1,90 @@
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="/">Batting</a></li>
+          <li><a href="/pitchings">Pitching</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+        <div class="container" >
+
+
+<h1>2016 Batting</h1>
+
+<hr noshade>
+<!-- table -->
+<div class="table-responsive">
+  <table class="table table-condensed table-hover" >
+    <thead class="text-center">
+      <tr class="active">
+        <th>#</th>
+        <th>Player</th>
+        <th>Team</th>
+        <th>Age</th>
+        <th>G</th>
+        <th>PA</th>
+        <th>AB</th>
+        <th>R</th>
+        <th>H</th>
+        <th>2B</th>
+        <th>3B</th>
+        <th>HR</th>
+        <th>RBI</th>
+        <th>SB</th>
+        <th>CS</th>
+        <th>BB</th>
+        <th>SO</th>
+        <th>AVG</th>
+        <th>OBP</th>
+        <th>SLG</th>
+        <th>OPS</th>
+        <th>TB</th>
+        <th>GIDP</th>
+        <th>HBP</th>
+        <th>SH</th>
+        <th>SF</th>
+        <th>IBB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @battings.each.with_index(1) do |batting, i| %>
+      <tr>
+        <td>
+          <%= i %>
+        </td>
+        <td class="text-left"><%= link_to batting.bat_name, "/player/#{batting.player_id}" %></a></td>
+        <td class="text-left"><%= batting.team_name %></td>
+        <td class="text-right"><%= batting.age %></td>
+        <td class="text-right"><%= batting.games %></td>
+        <td class="text-right"><%= batting.plate_appe %></td>
+        <td class="text-right"><%= batting.at_bats %></td>
+        <td class="text-right"><%= batting.runs %></td>
+        <td class="text-right"><%= batting.hits %></td>
+        <td class="text-right"><%= batting.doubles %></td>
+        <td class="text-right"><%= batting.triples %></td>
+        <td class="text-right"><%= batting.homeruns %></td>
+        <td class="text-right"><%= batting.runs_batted_in %></td>
+        <td class="text-right"><%= batting.stolen_bases %></td>
+        <td class="text-right"><%= batting.caught_steal %></td>
+        <td class="text-right"><%= batting.walks %></td>
+        <td class="text-right"><%= batting.strikeouts %></td>
+        <td class="text-right"><%= number_with_precision( batting.batting_avg, precision: 3) %></td>
+        <td class="text-right"><%= number_with_precision( batting.onbase_perc, precision: 3) %></td>
+        <td class="text-right"><%= number_with_precision( batting.slugging_perc, precision: 3) %></td>
+        <td class="text-right"><%= number_with_precision( batting.onbase_plus_slugging, precision: 3) %></td>
+        <td class="text-right"><%= batting.total_bases %></td>
+        <td class="text-right"><%= batting.grounded_double_plays %></td>
+        <td class="text-right"><%= batting.hit_by_pitch %></td>
+        <td class="text-right"><%= batting.sacrifice_hits %></td>
+        <td class="text-right"><%= batting.sacrifice_flies %></td>
+        <td class="text-right"><%= batting.intentional_bb %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div><!-- table-responsive -->
+        </div>
+      </div>
+    </div><!-- row -->
+

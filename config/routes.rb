@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
   resources :users, only: :show
-  resources :dashboards, only: :index
+
   resources :players, only: :show
-  root 'dashboards#index'
+
+  resources :battings, only: :index
+
+  resources :pitchings, only: :index
+
+  root 'battings#index'
 end
