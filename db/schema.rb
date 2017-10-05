@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171004064806) do
+ActiveRecord::Schema.define(version: 20171005043611) do
 
   create_table "battings", force: :cascade do |t|
     t.integer  "year",                  limit: 4
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171004064806) do
     t.string   "notes",                 limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "player_id",             limit: 255
+    t.string   "batter_id",             limit: 255
   end
 
   create_table "dashboards", force: :cascade do |t|
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20171004064806) do
     t.string   "notes",                limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "player_id",            limit: 255
+    t.string   "pitcher_id",           limit: 255
   end
 
   create_table "players", force: :cascade do |t|

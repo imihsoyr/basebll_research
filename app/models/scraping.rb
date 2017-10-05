@@ -5,13 +5,13 @@ class Scraping
     agent.user_agent_alias = "Mac Safari"
 
     # 取得するページごとに書き換える
-    page = agent.get( 'https://www.baseball-reference.com/register/team.cgi?id=fd1d00b1' )
+    page = agent.get( 'https://www.baseball-reference.com/register/team.cgi?id=7dcd3bed' )
     year = "2016"
-    team_name = "Yokohama Bay Stars"
+    team_name = "Chunichi Dragons"
 
     page.search( '#div_team_batting table tbody tr' ).each do |tr|
 
-      bat_name = tr.at("td a").inner_text  #打者名
+      bat_name = tr.at("td.left a").inner_text  #打者名
       player_id = tr.at("td a").get_attribute("href") #打者ID
       age = tr.at("td.right[data-stat*='age']").inner_text  #年齢
       games = tr.at("td.right[data-stat*='G']").inner_text  #試合
@@ -38,7 +38,6 @@ class Scraping
       sacrifice_flies = tr.at("td.right[data-stat*='SF']").inner_text  #犠飛
       intentional_bb = tr.at("td.right[data-stat*='IBB']").inner_text  #故意四球
       notes = tr.at("td.right[data-stat*='notes']").inner_text  #notes
-
 
   batting = Batting.where(bat_name: bat_name, year: year, team_name: team_name).first_or_initialize
     batting.year = year
@@ -71,7 +70,7 @@ class Scraping
     batting.notes = notes
     batting.player_id = player_id
   batting.save
-    end
+     end
   end
 
 end
