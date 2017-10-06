@@ -59,7 +59,7 @@ pitchings_csv.each do |row|
     complete_game: row[12],
     shutouts: row[13],
     saves: row[14],
-    ininngs_pitched: row[15],
+    innings_pitched: row[15],
     hits: row[16],
     runs: row[17],
     earned_runs: row[18],
