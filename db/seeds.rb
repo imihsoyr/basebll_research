@@ -44,7 +44,7 @@ pitchings_csv.shift
 
 pitchings_csv.each do |row|
 
-  Batting.create(
+  Pitching.create(
     year: row[1],
     team_name: row[2],
     pit_name: row[3],
