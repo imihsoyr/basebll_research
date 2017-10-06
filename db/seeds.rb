@@ -33,6 +33,50 @@ battings_csv.each do |row|
     hit_by_pitch: row[24],
     sacrifice_hits: row[25],
     sacrifice_flies: row[26],
-    intentional_bb:row[27]
+    intentional_bb: row[27],
+    batter_id: row[31]
+    )
+end
+
+pitchings_csv = CSV.readlines("db/pitching.csv")
+
+pitchings_csv.shift
+
+pitchings_csv.each do |row|
+
+  Batting.create(
+    year: row[1],
+    team_name: row[2],
+    pit_name: row[3],
+    age: row[4],
+    wins: row[5],
+    losses: row[6],
+    win_loss_perc: row[7],
+    earned_run_avg: row[8],
+    games: row[9],
+    games_started: row[10],
+    games_finished: row[11],
+    complete_game: row[12],
+    shutouts: row[13],
+    saves: row[14],
+    ininngs_pitched: row[15],
+    hits: row[16],
+    runs: row[17],
+    earned_runs: row[18],
+    homeruns: row[19],
+    walks: row[20],
+    intetional_bb: row[21],
+    strikeouts: row[22],
+    hit_by_pitch: row[23],
+    balks: row[24],
+    wild_pitches: row[25],
+    batter_faced: row[26],
+    whip: row[27],
+    hits_per_nine: row[28],
+    homeruns_per_nine: row[29],
+    walks_per_nine: row[30],
+    strikeouts_per_nine: row[31],
+    strikeouts_per_walks: row[32],
+    pitcher_id: row[36]
     )
 end
