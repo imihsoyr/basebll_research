@@ -65,7 +65,7 @@ pitchings_csv.each do |row|
     earned_runs: row[18],
     homeruns: row[19],
     walks: row[20],
-    intetional_bb: row[21],
+    intentional_bb: row[21],
     strikeouts: row[22],
     hit_by_pitch: row[23],
     balks: row[24],
