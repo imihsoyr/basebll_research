@@ -19,7 +19,7 @@ battings_csv.each do |row|
     doubles: row[10],
     triples: row[11],
     homeruns: row[12],
-    runs_batted_in: rows[13],
+    runs_batted_in: row[13],
     stolen_bases: row[14],
     caught_steal: row[15],
     walks: row[16],
