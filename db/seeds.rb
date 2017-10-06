@@ -12,7 +12,7 @@ battings_csv.each do |row|
     bat_name: row[3],
     age: row[4],
     games: row[5],
-    palte_appe: row[6],
+    plate_appe: row[6],
     at_bats: row[7],
     runs: row[8],
     hits: row[9],
