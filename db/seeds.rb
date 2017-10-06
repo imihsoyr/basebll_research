@@ -33,5 +33,6 @@ battings_csv.each do |row|
     hit_by_pitch: row[24],
     sacrifice_hits: row[25],
     sacrifice_flies: row[26],
-    intentional_bb:row[27])
+    intentional_bb:row[27]
+    )
 end
