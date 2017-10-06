@@ -87,7 +87,7 @@ players_csv.shift
 
 players_csv.each do |row|
 
-  Pitching.create(
+  Player.create(
     player_name: row[1],
 
     team: row[3],
