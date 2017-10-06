@@ -1,8 +1,11 @@
 require "csv"
 
 battings_csv = CSV.readlines("db/battings.csv")
+
 battings_csv.shift
+
 battings_csv.each do |row|
+
   Batting.create(
     year: row[1],
     team_name: row[2],
