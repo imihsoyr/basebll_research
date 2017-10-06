@@ -38,7 +38,7 @@ require "csv"
 #     )
 # end
 
-pitchings_csv = CSV.readlines("db/pitching.csv")
+pitchings_csv = CSV.readlines("db/pitchings.csv")
 
 pitchings_csv.shift
 
