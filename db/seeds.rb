@@ -70,7 +70,7 @@ pitchings_csv.each do |row|
     hit_by_pitch: row[23],
     balks: row[24],
     wild_pitches: row[25],
-    batter_faced: row[26],
+    batters_faced: row[26],
     whip: row[27],
     hits_per_nine: row[28],
     homeruns_per_nine: row[29],
